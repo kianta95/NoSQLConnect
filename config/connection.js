@@ -1,8 +1,14 @@
-const mongoose = require('mongoose')
-const { connect, connection } = require('mongoose');
+const mongoose = require("mongoose");
 
-const connectionString = 'mongodb://localhost:27017/NoSQLConnect';
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost:27017/NoSQLConnect",
+  {
+    useNewUrlParser: true, // Deprecated, can be removed
+    useUnifiedTopology: true // Deprecated, can be removed
+  }
+);
 
-connect(connectionString);
+// log mongo queries being executed!
+mongoose.set("debug", true);
 
-module.exports = connection;
+module.exports = mongoose.connection;

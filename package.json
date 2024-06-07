@@ -13,7 +13,7 @@
   "dependencies": {
     "config": "^3.3.11",
     "express": "^4.19.2",
-    "mongoose": "^8.4.0",
+    "mongoose": "^8.3.4",
     "utils": "^0.3.1"
   }
 }
